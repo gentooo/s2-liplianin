@@ -1,0 +1,14 @@
+config DVB_SMI2032
+	tristate "Somagic SMI2032 support"
+	depends on DVB_CORE && PCI && I2C
+	select DVB_DS3000 if !DVB_FE_CUSTOMISE
+	---help---
+	  Support for cards based on Somagic SMI2032 PCI-e chip like
+	  DVBWorld PCI-e 2006.
+
+	  Since these cards have no MPEG decoder onboard, they transmit
+	  only compressed MPEG data over the PCI bus, so you need
+	  an external software decoder to watch TV on your computer.
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called smi2032
